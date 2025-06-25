@@ -1,0 +1,30 @@
+<div class="sidebar">
+  <h3>helpdesk</h3>
+  <hr>
+  <br>
+  <ul>
+    <li class="dashboard">
+      <a routerLink="/dashboard">dashboard</a>
+    </li>
+    <li class="users">
+      <a routerLink="/users">users</a>
+    </li>
+
+    <li class="ticket">
+      <div class="ticket-header" (click)="toggleDropdown()">
+        <span>tickets </span>
+        <i class="fa-solid fa-chevron-down" *ngIf="!isDropdownOpen"></i>
+        <i class="fa-solid fa-chevron-right" *ngIf="isDropdownOpen"></i>
+      </div>
+
+      <ul class="liste" *ngIf="isDropdownOpen">
+        <li><a routerLink="/tickets/create">create ticket</a></li>
+        <li><a routerLink="/tickets/my">my ticket</a></li>
+      </ul>
+    </li>
+
+    <li class="categories">
+      <a routerLink="/categories">categories</a>
+    </li>
+  </ul>
+</div>
