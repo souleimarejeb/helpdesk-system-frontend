@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,22 +6,22 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterModule,CommonModule,FormsModule],
+  imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-   isDropdownOpen=false;
+  isDropdownOpen = false;
 
- ngOnInit(): void {
-    console.log(' vaueue isDropdownOpen',this.isDropdownOpen); 
- }
+  ngOnInit(): void {
+    console.log(' vaueue isDropdownOpen', this.isDropdownOpen);
+  }
 
- toggleDropdown() {
+  toggleDropdown() {
 
     this.isDropdownOpen = !this.isDropdownOpen;
-      console.log('isDropdownOpen valuee ::: ',this.isDropdownOpen); 
-    
+    console.log('isDropdownOpen valuee ::: ', this.isDropdownOpen);
+
   }
-  }
+}
 

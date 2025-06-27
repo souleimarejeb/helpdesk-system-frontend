@@ -1,12 +1,34 @@
 <div class="navbar">
     <div class="navbar-links">
-        <div class="search-container">
+        <div class="logo-section">
+            <a routerLink="/dashboard" class="logo-link">
+                <img src="assets/images/logo.png" alt="HelpDesk Logo" class="logo-img">
+                <span class="logo-text">HelpDesk</span>
+            </a>
+        </div>
 
+        <div class="nav-actions">
+
+            <a routerLink="/my-tickets" class="nav-action" title="My Tickets">
+                <i class="fa-solid fa-ticket"></i>
+                <span>Ticket</span>
+            </a>
+            <a routerLink="/contact" class="nav-action" title="Contact">
+                <i class="fa-solid fa-headset"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+
+        <div class="search-container">
             <input type="text" class="search-input" id="search" placeholder="Search...">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
         </div>
 
         <div class="nav-icons">
+            <div class="notification-icon nav-icon" title="Notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </div>
             <a routerLink="/userProfile" class="nav-icon" title="User Profile">
                 <i class="fa-solid fa-user"></i>
             </a>
