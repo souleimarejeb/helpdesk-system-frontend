@@ -3,7 +3,7 @@ import { LoginComponent } from './features/auth/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { TicketFormComponent } from './features/ticket-form/ticket-form.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { ListTicketComponent } from './tickets/list-ticket/list-ticket.component';
+import { ListTicketComponent } from './features/list-ticket/list-ticket.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
