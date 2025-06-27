@@ -1,54 +1,222 @@
-.ticket-table {
-  width: 95%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  font-family: Arial, Helvetica, sans-serif;
-  border: 2px solid #764ba2;
-  box-shadow: 0 4px 20px rgba(118, 75, 162, 0.2); /* ✅ ombre douce */
+/* Tickets Table Styles */
+.tickets-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tickets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tickets-header h1 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.tickets-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-btn,
+.refresh-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #34495e;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-btn:hover,
+.refresh-btn:hover {
+  background-color: #f8f9fa;
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.table-responsive {
+  overflow-x: auto;
   border-radius: 8px;
-  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
 }
 
 .ticket-table th {
-  background-color: #764ba2;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  padding: 14px;
+  background-color: #f8f9fa;
+  color: #34495e;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .ticket-table td {
-  padding: 12px;
-  text-align: justify; /* ✅ justifie le texte */
-  border: 1px solid #764ba2;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  color: #2c3e50;
+  vertical-align: middle;
 }
 
-.ticket-table tbody tr:nth-child(even) {
-  background-color: #f9f5ff; /* ✅ alternance de lignes */
+.ticket-row:hover {
+  background-color: #f8fafc;
 }
 
-.ticket-table tbody tr:hover {
-  background-color: #ede4ff; /* ✅ effet au survol */
-  transition: background-color 0.3s;
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-h1 {
-  display: inline-block; 
-  padding: 8px 16px;
-  margin: 20px 0 0 10%;
-  text-transform: capitalize;
- background: linear-gradient(to right, #667eea, #764ba2);
-  color: white;
-  border-radius: 8px;
-  font-size: 24px;
-  font-family: Arial, sans-serif;
+.status-badge.open {
+  background-color: #e3f2fd;
+  color: #1976d2;
 }
 
-.row {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: solid 1px #764ba2;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 10px;
-  background-color: #fff;
+.status-badge.in-progress {
+  background-color: #fff8e1;
+  color: #ff8f00;
+}
+
+.status-badge.resolved {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.comment-cell {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions-cell {
+  white-space: nowrap;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #7f8c8d;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.action-btn:hover {
+  background-color: #f1f5f9;
+  color: #667eea;
+}
+
+.view-btn:hover {
+  color: #1976d2;
+}
+
+.edit-btn:hover {
+  color: #ff8f00;
+}
+
+.transfer-btn:hover {
+  color: #764ba2;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagination-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-info {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.items-per-page {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.items-per-page label {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.items-per-page select {
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+
+  .ticket-table th,
+  .ticket-table td {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tickets-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .table-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
 }

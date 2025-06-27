@@ -1,29 +1,118 @@
-<h1>my tickets</h1>
+<div class="tickets-container">
+  <div class="tickets-header">
+    <h1>My Tickets</h1>
+    <div class="tickets-actions">
+      <button class="filter-btn">
+        <i class="fa-solid fa-filter"></i> Filter
+      </button>
+      <button class="refresh-btn">
+        <i class="fa-solid fa-rotate"></i> Refresh
+      </button>
+    </div>
+  </div>
 
-<table class="ticket-table">
-  <thead>
-    <tr >
-      <th>Status</th>
-      <th>Type</th>
-      <th>Created</th>
-      <th>Creator</th>
-      <th>Attachment</th>
-      <th>Transferred From</th>
-      <th>Transferred By</th>
-      <th>Comment</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tr class="row">
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>ff</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+  <div class="table-responsive">
+    <table class="ticket-table">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Type</th>
+          <th>Created</th>
+          <th>Creator</th>
+          <th>Attachment</th>
+          <th>Transferred From</th>
+          <th>Transferred By</th>
+          <th>Comment</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ticket-row">
+          <td>
+            <span class="status-badge open">Open</span>
+          </td>
+          <td>Technical</td>
+          <td>2023-11-15 14:30</td>
+          <td>John Doe</td>
+          <td>
+            <i class="fa-solid fa-paperclip"></i>
+          </td>
+          <td>Support Team</td>
+          <td>Jane Smith</td>
+          <td class="comment-cell">Network connectivity issue</td>
+          <td class="actions-cell">
+            <button class="action-btn view-btn" title="View Ticket">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+            <button class="action-btn edit-btn" title="Edit Ticket">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="action-btn transfer-btn" title="Transfer Ticket">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="ticket-row">
+          <td>
+            <span class="status-badge in-progress">In Progress</span>
+          </td>
+          <td>Account</td>
+          <td>2023-11-14 09:15</td>
+          <td>Sarah Johnson</td>
+          <td>
+            <i class="fa-solid fa-paperclip"></i>
+          </td>
+          <td>-</td>
+          <td>-</td>
+          <td class="comment-cell">Password reset request</td>
+          <td class="actions-cell">
+            <button class="action-btn view-btn" title="View Ticket">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+            <button class="action-btn edit-btn" title="Edit Ticket">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+          </td>
+        </tr>
+        <tr class="ticket-row">
+          <td>
+            <span class="status-badge resolved">Resolved</span>
+          </td>
+          <td>Request</td>
+          <td>2023-11-10 16:45</td>
+          <td>Mike Brown</td>
+          <td>-</td>
+          <td>IT Department</td>
+          <td>Alex Wilson</td>
+          <td class="comment-cell">Software installation</td>
+          <td class="actions-cell">
+            <button class="action-btn view-btn" title="View Ticket">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-</table>
+  <div class="table-footer">
+    <div class="pagination-controls">
+      <button class="pagination-btn" disabled>
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <span class="page-info">Page 1 of 5</span>
+      <button class="pagination-btn">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+    <div class="items-per-page">
+      <label for="items-per-page">Items per page:</label>
+      <select id="items-per-page">
+        <option value="10">10</option>
+        <option value="25" selected>25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+</div>

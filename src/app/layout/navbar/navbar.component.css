@@ -157,7 +157,6 @@
     position: relative;
 }
 
-/* Adjust existing search container to fit new layout */
 .search-container {
     flex-grow: 1;
     max-width: 400px;

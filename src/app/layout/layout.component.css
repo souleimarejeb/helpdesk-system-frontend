@@ -6,10 +6,12 @@
 }
 
 main {
+    padding-top: 70px;
     display: flex;
     flex: 1;
     position: relative;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .content-area {

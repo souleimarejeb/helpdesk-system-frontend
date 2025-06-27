@@ -8,12 +8,13 @@ import { ListTicketComponent } from './tickets/list-ticket/list-ticket.component
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'sidebar', component: SidebarComponent },
-    { path: 'tickets', component: ListTicketComponent },
+    // { path: 'tickets', component: ListTicketComponent },
     {
         path: '',
         component: LayoutComponent,
         children: [
             { path: 'create-Ticket', component: TicketFormComponent },
+            { path: 'tickets', component: ListTicketComponent }
         ]
         //   { path: '', component: HomeComponent }, // Default child route
         //   { path: 'about', component: AboutComponent },
