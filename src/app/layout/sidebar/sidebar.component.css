@@ -1,0 +1,95 @@
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+hr {
+  border-top: 2px solid white;
+  margin-top: 10%;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  line-height: 60px;
+  margin-left: 13%;
+}
+
+.sidebar li {
+  margin: 15px 0;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.sidebar li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+
+.sidebar a:hover {
+  color:rgb(40, 40, 205);
+  text-decoration: underline;
+}
+
+
+.ticket a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+
+.ticket:hover i {
+  transform: rotate(90deg);
+ color:rgb(40, 40, 205);
+}
+
+.ticket i {
+  transition: transform 0.3s, color 0.3s;
+  background-color: none;
+  align-items: center;
+  justify-content: space-between;
+}
+.ticket :hover{
+color:rgb(40, 40, 205);
+}
+
+.liste {
+  margin-left: 15px;
+  font-size: 14px;
+  background-color: transparent;
+}
+
+.liste li {
+  margin: 8px 0;
+  transition: color 0.3s;
+}
+
+
+.liste li:hover {
+ color:rgb(40, 40, 205); 
+  cursor: pointer;
+}

@@ -1,0 +1,54 @@
+.ticket-table {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #764ba2;
+  box-shadow: 0 4px 20px rgba(118, 75, 162, 0.2); /* ✅ ombre douce */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ticket-table th {
+  background-color: #764ba2;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px;
+}
+
+.ticket-table td {
+  padding: 12px;
+  text-align: justify; /* ✅ justifie le texte */
+  border: 1px solid #764ba2;
+}
+
+.ticket-table tbody tr:nth-child(even) {
+  background-color: #f9f5ff; /* ✅ alternance de lignes */
+}
+
+.ticket-table tbody tr:hover {
+  background-color: #ede4ff; /* ✅ effet au survol */
+  transition: background-color 0.3s;
+}
+
+h1 {
+  display: inline-block; 
+  padding: 8px 16px;
+  margin: 20px 0 0 10%;
+  text-transform: capitalize;
+ background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border-radius: 8px;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.row {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: solid 1px #764ba2;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+}
