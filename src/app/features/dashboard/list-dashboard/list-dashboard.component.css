@@ -1,0 +1,40 @@
+body {
+  background-color: #1f1f2e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+.dashboard {
+  padding: 40px;
+}
+
+.grid-dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.card,
+.icon-card {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  padding: 20px;
+  border-radius: 12px;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.card:hover,
+.icon-card:hover {
+  transform: scale(1.05);
+}
+
+.icon-card i {
+  font-size: 28px;
+  margin-bottom: 10px;
+  display: block;
+  color: #fff;
+}

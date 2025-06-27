@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './features/auth/login/login.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ListTicketComponent } from './tickets/list-ticket/list-ticket.component';
+import { ListDashboardComponent } from './features/dashboard/list-dashboard/list-dashboard.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -9,4 +10,7 @@ export const routes: Routes = [
     {path:'tickets',
         component:ListTicketComponent
     },
+    {path:'dashboard',
+        component:ListDashboardComponent
+    }
 ];
