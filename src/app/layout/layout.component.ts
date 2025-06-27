@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FooterComponent } from "./footer/footer.component";
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-layout',
   imports: [FooterComponent, NavbarComponent, RouterModule],
@@ -10,6 +11,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './layout.component.css'
 })
 export class LayoutComponent {
-
 
 }
