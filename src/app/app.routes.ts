@@ -10,16 +10,15 @@ import { ContactComponent } from './features/contact/contact.component';
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'sidebar', component: SidebarComponent },
-    // { path: 'tickets', component: ListTicketComponent },
     {
         path: '',
         component: LayoutComponent,
         children: [
-            { path: 'create-Ticket', component: TicketFormComponent },
+            { path: 'create-ticket', component: TicketFormComponent },
             { path: 'tickets', component: ListTicketComponent },
-            {path: 'list-request', component:ListRequestComponent},
-            {path: 'contact', component:ContactComponent}
+            { path: 'list-request', component: ListRequestComponent },
+            { path: 'contact', component: ContactComponent }
         ]
-        
+
     }
 ];

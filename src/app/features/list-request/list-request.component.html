@@ -9,26 +9,26 @@
         <div class="circle"></div>
       </div>
     </div>
-    
+
     <h3 class="options-title">Select an option to get started</h3>
 
     <div class="cards">
-      <div class="card" routerLink="/create-card">
+      <div class="card" [routerLink]="['/create-ticket']">
         <div class="card-icon">
           <i class="fa-solid fa-plus"></i>
         </div>
         <p>Create Your Ticket</p>
         <div class="card-hover-effect"></div>
       </div>
-      
-      <div class="card" routerLink="/my-tickets">
+
+      <div class="card" [routerLink]="['/tickets']">
         <div class="card-icon">
           <i class="fa-solid fa-ticket"></i>
         </div>
         <p>All My Tickets</p>
         <div class="card-hover-effect"></div>
       </div>
-      
+
       <div class="card" routerLink="/book_appointment">
         <div class="card-icon">
           <i class="fas fa-calendar-check"></i>
@@ -37,7 +37,7 @@
         <div class="card-hover-effect"></div>
       </div>
     </div>
-    
+
     <div class="help-footer">
       <p>Can't find what you need? <a href="/contact">Contact us directly</a></p>
     </div>

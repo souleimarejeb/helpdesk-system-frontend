@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-ticket-form',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './ticket-form.component.html',
   styleUrl: './ticket-form.component.css'
 })
