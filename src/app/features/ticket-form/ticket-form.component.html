@@ -1,103 +1,97 @@
 <div class="container">
-    <!-- <div class="details-container">
+    <section class="details-container">
         <div class="details-title">
-            <h2>Fill the form </h2>
-            <h2>Create Your Own Ticket </h2>
+            <h2>Fill the form</h2>
+            <h2>Create Your Own Ticket</h2>
         </div>
         <div class="prev-btn">
-            <a [routerLink]="['/list-request']">Previous</a>
-        </div> -->
-
-    <!-- </div> -->
-    <div class="form-container">
-        <div class="titles">
-            <div class="ticket">
-                <div class="ticket-header">
-                    <h2>New Ticket</h2>
-                    <p>Please enter the information</p>
-                </div>
-                <form class="ticket-form">
-                    <div class="form-group">
-                        <!-- Title Field -->
-                        <div class="input-field">
-                            <label for="title">Ticket Title</label>
-                            <i class="fa-solid fa-heading"></i>
-                            <input type="text" id="title" placeholder="Enter ticket title" required>
-                        </div>
-
-                        <div class="selector-grid">
-                            <!-- Type -->
-                            <div class="selector-item">
-                                <label for="type">Type</label>
-                                <div class="input-with-icon">
-                                    <i class="fa-solid fa-tag"></i>
-                                    <select id="type" required>
-                                        <option value="" disabled selected>Select Type</option>
-                                        <option value="incident">Incident</option>
-                                        <option value="problem">Problem</option>
-                                        <option value="request">Request</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Category -->
-                            <div class="selector-item">
-                                <label for="category">Category</label>
-                                <div class="input-with-icon">
-                                    <i class="fa-solid fa-folder"></i>
-                                    <select id="category" required>
-                                        <option value="" disabled selected>Select Category</option>
-                                        <option value="PaP">PaP</option>
-                                        <option value="Technical">Technical</option>
-                                        <option value="Account">Account</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Priority -->
-                            <div class="selector-item">
-                                <label for="priority">Priority</label>
-                                <div class="input-with-icon">
-                                    <i class="fa-solid fa-flag"></i>
-                                    <select id="priority" required>
-                                        <option value="" disabled selected>Select Priority</option>
-                                        <option value="low">Low</option>
-                                        <option value="medium">Medium</option>
-                                        <option value="high">High</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Description Field -->
-                        <div class="input-field">
-                            <label for="description">Description</label>
-                            <i class="fa-solid fa-align-left"></i>
-                            <textarea id="description" placeholder="Describe your issue" rows="3" required></textarea>
-                        </div>
-
-
-
-                        <!-- File Upload -->
-                        <div class="input-field file-upload">
-                            <label for="attachment">Attachments</label>
-                            <div class="upload-area">
-                                <i class="fa-solid fa-cloud-arrow-up"></i>
-                                <input type="file" id="attachment" multiple>
-                                <label for="attachment" class="upload-label">
-                                    <span>Drag & drop files or click to browse</span>
-                                    <small>(Max. 5MB per file)</small>
-                                </label>
-                            </div>
-                            <div class="file-preview" id="filePreview"></div>
-                        </div>
-
-
-                        <button type="submit" class="submit-btn">
-                            <i class="fa-solid fa-paper-plane"></i> Submit Ticket
-                        </button>
-                    </div>
-                </form>
-            </div>
+            <a [routerLink]="['/list-request']">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Tickets</span>
+            </a>
         </div>
-    </div>
+    </section>
+
+    <section class="form-container">
+        <header class="ticket-header">
+            <h2>New Ticket</h2>
+        </header>
+
+        <form class="ticket-form">
+            <!-- Ticket Title -->
+            <div class="input-field">
+                <label for="title">Ticket Title</label>
+                <i class="fa-solid fa-heading"></i>
+                <input type="text" id="title" placeholder="Enter ticket title" required>
+            </div>
+
+            <!-- Selectors -->
+            <div class="selector-grid">
+                <div class="selector-item">
+                    <label for="type">Type</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-tag"></i>
+                        <select id="type" required>
+                            <option value="" disabled selected>Select Type</option>
+                            <option value="incident">Incident</option>
+                            <option value="problem">Problem</option>
+                            <option value="request">Request</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="selector-item">
+                    <label for="category">Category</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-folder"></i>
+                        <select id="category" required>
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="PaP">PaP</option>
+                            <option value="Technical">Technical</option>
+                            <option value="Account">Account</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="selector-item">
+                    <label for="priority">Priority</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-flag"></i>
+                        <select id="priority" required>
+                            <option value="" disabled selected>Select Priority</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="input-field">
+                <label for="description">Description</label>
+                <i class="fa-solid fa-align-left"></i>
+                <textarea id="description" placeholder="Describe your issue" required></textarea>
+            </div>
+
+            <!-- File Upload -->
+            <div class="input-field file-upload">
+                <label for="attachment">Attachments</label>
+                <div class="upload-area">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <input type="file" id="attachment" multiple>
+                    <label for="attachment" class="upload-label">
+                        <span>Drag & drop files or click to browse</span>
+                        <small>(Max. 5MB per file)</small>
+                    </label>
+                </div>
+                <div class="file-preview" id="filePreview"></div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Submit Ticket
+            </button>
+        </form>
+    </section>
 </div>

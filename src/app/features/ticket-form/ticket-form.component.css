@@ -1,92 +1,157 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-
+:host {
+    display: block;
 }
+
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    padding: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
+    min-height: calc(100vh - 70px);
+    padding: 2rem;
+    background: #f8f9fa;
+    box-sizing: border-box;
 }
+
 
 .details-container {
-    background-color: black;
-    padding: 60px 50px;
-    width: 40%;
-    border-radius: 10px;
-    border-color: darksalmon;
-    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.details-title {
-    text-align: center;
-    margin-bottom: 30px;
+.details-title h2 {
+    margin: 0;
     color: #333;
     font-weight: 600;
-    margin-bottom: 10px;
-
+    line-height: 1.3;
 }
+
+.details-title h2:first-child {
+    color: #667eea;
+    font-size: 1.2rem;
+}
+
+.details-title h2:last-child {
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
+
+
+.prev-btn {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+}
+
+.prev-btn a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 10px rgba(118, 75, 162, 0.3);
+}
+
+.prev-btn a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+.prev-btn a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+}
+
+.prev-btn a:hover::before {
+    opacity: 1;
+}
+
+.prev-btn a:active {
+    transform: translateY(0);
+}
+
+.prev-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.prev-btn a:hover i {
+    transform: translateX(-3px);
+}
+
 
 .form-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.ticket-header {
-    text-align: center;
-    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .ticket-header h2 {
+    margin: 0 0 1.5rem 0;
     color: #333;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 0.75rem;
 }
 
-.ticket-header p {
-    color: #666;
-    font-size: 14px;
+.ticket-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px;
 }
 
-.ticket-form .form-group {
-    margin-top: 20px;
+.ticket-form {
+    margin-top: 1.5rem;
 }
 
 .input-field {
+    margin-bottom: 1.75rem;
     position: relative;
-    margin-bottom: 25px;
 }
 
 .input-field label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
     color: #555;
-    font-size: 13px;
     font-weight: 500;
-    transition: all 0.3s;
+    font-size: 0.95rem;
 }
 
 .input-field i {
     position: absolute;
     left: 15px;
-    top: calc(50% + 10px);
-    transform: translateY(-50%);
+    top: 40px;
     color: #667eea;
-    z-index: 2;
+    font-size: 16px;
+    pointer-events: none;
 }
 
 .input-field input,
@@ -96,65 +161,46 @@
     padding: 12px 15px 12px 40px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9f9f9;
     box-sizing: border-box;
-    background-color: #fff;
 }
 
 .input-field input:focus,
 .input-field textarea:focus,
 .input-with-icon select:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
     outline: none;
-}
-
-.ticketType {
-    color: #666;
-    font-size: 12px;
-    margin-bottom: 8px;
-    display: block;
-}
-
-.submit-btn {
-    margin-top: 25px;
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(to right, #667eea, #764ba2);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.submit-btn:hover {
-    background: linear-gradient(to right, #5a6fd1, #6a4295);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
-.submit-btn:active {
-    transform: translateY(0);
-}
-
-.submit-btn i {
-    margin-right: 8px;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+    background-color: #fff;
 }
 
 .input-field textarea {
+    min-height: 120px;
     resize: vertical;
-    min-height: 100px;
-    padding-top: 15px;
+    line-height: 1.5;
+}
+
+
+.selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.selector-item label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 .input-with-icon {
     position: relative;
-    margin-top: 5px;
 }
 
 .input-with-icon i {
@@ -163,54 +209,60 @@
     top: 50%;
     transform: translateY(-50%);
     color: #667eea;
-    z-index: 2;
+    font-size: 16px;
+    z-index: 1;
+    pointer-events: none;
 }
 
+.input-with-icon select {
+    appearance: none;
+    padding-left: 40px;
+    cursor: pointer;
+}
+
+/* ========== File Upload ========== */
 .file-upload {
-    margin-top: 30px;
-}
-
-.file-upload label {
-    margin-bottom: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .upload-area {
     border: 2px dashed #ddd;
     border-radius: 8px;
-    padding: 25px 20px;
+    padding: 2rem;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    margin-top: 8px;
+    background-color: #f9f9f9;
 }
 
 .upload-area:hover {
     border-color: #667eea;
-    background: rgba(102, 126, 234, 0.05);
+    background-color: rgba(102, 126, 234, 0.05);
 }
 
 .upload-area i {
-    font-size: 24px;
+    font-size: 2rem;
     color: #667eea;
-    margin-bottom: 12px;
+    margin-bottom: 1rem;
     display: block;
 }
 
 .upload-label span {
     display: block;
-    margin-bottom: 8px;
     color: #555;
-    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .upload-label small {
-    color: #95a5a6;
-    font-size: 12px;
+    color: #888;
+    font-size: 0.8rem;
 }
 
-#attachment {
+.file-upload input[type="file"] {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -221,94 +273,106 @@
 }
 
 .file-preview {
-    margin-top: 15px;
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.75rem;
 }
 
-.file-preview-item {
-    background: #f5f7fa;
-    border-radius: 4px;
-    padding: 8px 12px;
-    font-size: 12px;
-    display: flex;
+
+.submit-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.file-preview-item i {
-    color: #667eea;
-    font-size: 14px;
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.submit-btn i {
+    font-size: 0.9rem;
 }
 
-.selector-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-bottom: 20px;
+
+.input-field input:invalid,
+.input-field textarea:invalid,
+.input-with-icon select:invalid {
+    border-color: #ff6b6b;
 }
 
-.selector-item {
-    display: flex;
-    flex-direction: column;
+.input-field input:invalid:focus,
+.input-field textarea:invalid:focus,
+.input-with-icon select:invalid:focus {
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
 }
 
-.selector-item .input-with-icon {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.selector-item select {
-    flex-grow: 1;
-}
-
-.selector-item .input-with-icon i {
-    top: calc(50%);
-}
 
 @media (max-width: 768px) {
-    .selector-grid {
-        grid-template-columns: 1fr;
+    .container {
+        padding: 1.5rem;
     }
 
-    .selector-item .input-with-icon i {
-        top: calc(50% + 5px);
+    .details-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .selector-grid {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
     .form-container {
-        padding: 30px 20px;
+        padding: 1rem;
     }
 
-    .ticket-header h2 {
-        font-size: 20px;
+    .input-field input,
+    .input-field textarea,
+    .input-with-icon select {
+        padding: 10px 12px 10px 36px;
     }
 
-    .input-field {
-        margin-bottom: 20px;
+    .input-field i,
+    .input-with-icon i {
+        font-size: 14px;
+        left: 12px;
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
     }
 
     .upload-area {
-        padding: 20px 15px;
+        padding: 1.5rem;
     }
 
-    .upload-area i {
-        font-size: 20px;
-        margin-bottom: 10px;
+    .ticket-header h2 {
+        font-size: 1.3rem;
     }
 }
