@@ -12,39 +12,43 @@
 
 /* Typography */
 h1 {
-    text-align: center;
-    text-transform: capitalize;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.8px;
-    margin: 40px 0 25px;
-    position: relative;
-    display: inline-block;
-    font-size: 2.5rem;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    padding: 0 20px;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  margin: 40px 0 25px;
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding: 0 20px;
 }
 
 h1:after {
-    content: '';
-    position: absolute;
-    width: 80%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-    bottom: -12px;
-    left: 10%;
-    border-radius: 4px;
-    transform: scaleX(0);
-    transform-origin: center;
-    animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  bottom: -12px;
+  left: 10%;
+  border-radius: 4px;
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 @keyframes scaleIn {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* Main Container */
@@ -84,7 +88,7 @@ h1:after {
   background: white;
   border-radius: 20px;
   padding: 35px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--border-color);
   transition: transform 0.3s ease;
   flex: 1;
@@ -101,7 +105,7 @@ h1:after {
   border-radius: 20px;
   padding: 35px;
   width: 380px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   font-family: 'Poppins', sans-serif;
   border: 1px solid var(--border-color);
   transition: all 0.3s ease;
@@ -146,7 +150,8 @@ h1:after {
   width: 100%;
   height: 10px;
   -webkit-appearance: none;
-  background: linear-gradient(90deg, #e0d6ff, #a78bfa); /* Lighter purple gradient */
+  background: linear-gradient(90deg, #e0d6ff, #a78bfa);
+  /* Lighter purple gradient */
   border-radius: 10px;
   outline: none;
   cursor: pointer;
@@ -155,24 +160,28 @@ h1:after {
 
 .range-container input[type="range"]:hover {
   height: 12px;
-  background: linear-gradient(90deg, #d4c2ff, #9c7af3); /* Slightly more saturated on hover */
+  background: linear-gradient(90deg, #d4c2ff, #9c7af3);
+  /* Slightly more saturated on hover */
 }
 
 .range-container input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 22px;
   height: 22px;
-  background: #764ba2; /* Solid purple instead of white */
+  background: #764ba2;
+  /* Solid purple instead of white */
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-  border: 3px solid #e0d6ff; /* Light purple border */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  border: 3px solid #e0d6ff;
+  /* Light purple border */
   transition: all 0.2s ease;
 }
 
 .range-container input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.1);
-  background: #667eea; /* Changes to blue on hover */
+  background: #667eea;
+  /* Changes to blue on hover */
   box-shadow: 0 4px 10px rgba(118, 75, 162, 0.3);
 }
 
@@ -183,7 +192,7 @@ h1:after {
   background: #764ba2;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   border: 3px solid #e0d6ff;
 }
 
@@ -197,6 +206,7 @@ h1:after {
   border-radius: 10px;
   height: 10px;
 }
+
 .range-label {
   font-size: 14px;
   color: var(--primary-color);
@@ -243,7 +253,7 @@ h1:after {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   color: var(--primary-color);
   font-weight: 500;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
 }
@@ -275,7 +285,7 @@ h1:after {
 
 .time-buttons button:focus,
 .time-buttons button.selected {
-  background-color:#8058a7;
+  background-color: #8058a7;
   border: none;
   box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
   transform: translateY(-3px);
@@ -288,8 +298,15 @@ h1:after {
 
 /* Animation Enhancements */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .appointment-options {
@@ -308,12 +325,12 @@ h1:after {
     align-items: center;
     padding: 30px;
   }
-  
+
   .appointment-options {
     width: 100%;
     max-width: 500px;
   }
-  
+
   .calen {
     min-width: auto;
     width: 100%;
@@ -322,9 +339,17 @@ h1:after {
 
 /* Floating Animation */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .appointment-container:hover {
