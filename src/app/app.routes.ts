@@ -6,6 +6,8 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ListTicketComponent } from './features/list-ticket/list-ticket.component';
 import { ListRequestComponent } from './features/list-request/list-request.component';
 import { ContactComponent } from './features/contact/contact.component';
+import { ListAppointmentComponent } from './features/list-appointment/list-appointment.component';
+import { CalendarComponent } from './shared/calendar/calendar.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -17,7 +19,9 @@ export const routes: Routes = [
             { path: 'create-ticket', component: TicketFormComponent },
             { path: 'tickets', component: ListTicketComponent },
             { path: 'list-request', component: ListRequestComponent },
-            { path: 'contact', component: ContactComponent }
+            { path: 'contact', component: ContactComponent },
+            {path:'calendar',component:CalendarComponent},
+            {path:'list-appointment',component:ListAppointmentComponent}
         ]
 
     }

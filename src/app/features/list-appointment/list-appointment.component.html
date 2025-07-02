@@ -1,0 +1,26 @@
+<h1>create your appointment</h1>
+
+<div class="appointment-container">
+  <!-- Partie gauche : calendrier -->
+  <div class="calen">
+    <app-calendar></app-calendar>
+  </div>
+
+  <!-- Partie droite : durée + créneaux horaires -->
+  <div class="appointment-options">
+    <h3>How long do you need?</h3>
+    <div class="range-container">
+      <span class="range-label">20 min</span>
+      <input type="range" id="rangeInput" min="20" max="45" value="30" oninput="document.getElementById('range-value').innerText = rangeInput.value + ' min'">
+      <span class="range-label">45 min</span>
+    </div>
+    <p class="selected-range">Selected: <span id="range-value">30 min</span></p>
+
+    <h3> What time works best?</h3>
+    <div class="time-buttons">
+      <button>10 am</button>
+      <button>13:30 am</button>
+      <button>14:15 pm</button>
+    </div>
+  </div>
+</div>
