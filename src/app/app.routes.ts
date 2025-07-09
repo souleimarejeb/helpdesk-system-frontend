@@ -8,6 +8,7 @@ import { ListRequestComponent } from './features/list-request/list-request.compo
 import { ContactComponent } from './features/contact/contact.component';
 import { ListAppointmentComponent } from './features/list-appointment/list-appointment.component';
 import { CalendarComponent } from './shared/calendar/calendar.component';
+import { HomeComponent } from './layout/home/home.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -20,8 +21,9 @@ export const routes: Routes = [
             { path: 'tickets', component: ListTicketComponent },
             { path: 'list-request', component: ListRequestComponent },
             { path: 'contact', component: ContactComponent },
-            {path:'calendar',component:CalendarComponent},
-            {path:'list-appointment',component:ListAppointmentComponent}
+            { path: 'calendar', component: CalendarComponent },
+            { path: 'list-appointment', component: ListAppointmentComponent },
+            { path: 'home', component: HomeComponent }
         ]
 
     }
