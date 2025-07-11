@@ -5,7 +5,7 @@
       <button class="filter-btn">
         <i class="fa-solid fa-filter"></i> Filter
       </button>
-      <button class="refresh-btn">
+      <button class="refresh-btn" (click)="_fetchData('2')">
         <i class="fa-solid fa-rotate"></i> Refresh
       </button>
     </div>
@@ -16,55 +16,39 @@
       <thead>
         <tr>
           <th>Status</th>
+          <th>Title</th>
           <th>Type</th>
-          <th>Created</th>
-          <th>Creator</th>
-          <th>Attachment</th>
-          <th>Transferred From</th>
-          <th>Transferred By</th>
-          <th>Comment</th>
+          <th>Priority</th>
+          <th>Description</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="ticket-row">
+        <tr class="ticket-row" *ngFor="let ticket of tickets">
           <td>
-            <span class="status-badge open">Open</span>
+            <span class="status-badge" [ngClass]="{
+              'open': ticket.status === 'open',
+              'in-progress': ticket.status === 'in-progress',
+              'resolved': ticket.status === 'resolved',
+              'closed': ticket.status === 'closed'
+            }">
+              {{ ticket.status | titlecase }}
+            </span>
           </td>
-          <td>Technical</td>
-          <td>2023-11-15 14:30</td>
-          <td>John Doe</td>
+          <td>{{ ticket.title }}</td>
           <td>
-            <i class="fa-solid fa-paperclip"></i>
+            <span class="type-badge">{{ ticket.type }}</span>
           </td>
-          <td>Support Team</td>
-          <td>Jane Smith</td>
-          <td class="comment-cell">Network connectivity issue</td>
-          <td class="actions-cell">
-            <button class="action-btn view-btn" title="View Ticket">
-              <i class="fa-solid fa-eye"></i>
-            </button>
-            <button class="action-btn edit-btn" title="Edit Ticket">
-              <i class="fa-solid fa-pen-to-square"></i>
-            </button>
-            <button class="action-btn transfer-btn" title="Transfer Ticket">
-              <i class="fa-solid fa-arrow-right-arrow-left"></i>
-            </button>
-          </td>
-        </tr>
-        <tr class="ticket-row">
           <td>
-            <span class="status-badge in-progress">In Progress</span>
+            <span class="priority-badge" [ngClass]="{
+              'low': ticket.priority === 'low',
+              'medium': ticket.priority === 'medium',
+              'high': ticket.priority === 'high'
+            }">
+              {{ ticket.priority | titlecase }}
+            </span>
           </td>
-          <td>Account</td>
-          <td>2023-11-14 09:15</td>
-          <td>Sarah Johnson</td>
-          <td>
-            <i class="fa-solid fa-paperclip"></i>
-          </td>
-          <td>-</td>
-          <td>-</td>
-          <td class="comment-cell">Password reset request</td>
+          <td class="description-cell">{{ ticket.description }}</td>
           <td class="actions-cell">
             <button class="action-btn view-btn" title="View Ticket">
               <i class="fa-solid fa-eye"></i>
@@ -74,34 +58,21 @@
             </button>
           </td>
         </tr>
-        <tr class="ticket-row">
-          <td>
-            <span class="status-badge resolved">Resolved</span>
-          </td>
-          <td>Request</td>
-          <td>2023-11-10 16:45</td>
-          <td>Mike Brown</td>
-          <td>-</td>
-          <td>IT Department</td>
-          <td>Alex Wilson</td>
-          <td class="comment-cell">Software installation</td>
-          <td class="actions-cell">
-            <button class="action-btn view-btn" title="View Ticket">
-              <i class="fa-solid fa-eye"></i>
-            </button>
-          </td>
+        <tr *ngIf="tickets.length === 0">
+          <td colspan="6" class="no-tickets">No tickets found</td>
         </tr>
       </tbody>
     </table>
   </div>
 
+  <!-- Footer remains the same -->
   <div class="table-footer">
     <div class="pagination-controls">
       <button class="pagination-btn" disabled>
         <i class="fa-solid fa-chevron-left"></i>
       </button>
-      <span class="page-info">Page 1 of 5</span>
-      <button class="pagination-btn">
+      <span class="page-info">Page 1 of 1</span>
+      <button class="pagination-btn" disabled>
         <i class="fa-solid fa-chevron-right"></i>
       </button>
     </div>

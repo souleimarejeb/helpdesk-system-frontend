@@ -17,12 +17,12 @@
             <h2>New Ticket</h2>
         </header>
 
-        <form class="ticket-form">
+        <form class="ticket-form" [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
             <!-- Ticket Title -->
             <div class="input-field">
                 <label for="title">Ticket Title</label>
                 <i class="fa-solid fa-heading"></i>
-                <input type="text" id="title" placeholder="Enter ticket title" required>
+                <input type="text" id="title" placeholder="Enter ticket title" required formControlName="title">
             </div>
 
             <!-- Selectors -->
@@ -31,11 +31,11 @@
                     <label for="type">Type</label>
                     <div class="input-with-icon">
                         <i class="fa-solid fa-tag"></i>
-                        <select id="type" required>
+                        <select id="type" required formControlName="type">
                             <option value="" disabled selected>Select Type</option>
-                            <option value="incident">Incident</option>
-                            <option value="problem">Problem</option>
-                            <option value="request">Request</option>
+                            <option value="Incident">Incident</option>
+                            <option value="Problem">Problem</option>
+                            <option value="Request">Request</option>
                         </select>
                     </div>
                 </div>
@@ -57,11 +57,11 @@
                     <label for="priority">Priority</label>
                     <div class="input-with-icon">
                         <i class="fa-solid fa-flag"></i>
-                        <select id="priority" required>
+                        <select id="priority" required formControlName="priority">
                             <option value="" disabled selected>Select Priority</option>
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
                         </select>
                     </div>
                 </div>
@@ -71,7 +71,8 @@
             <div class="input-field">
                 <label for="description">Description</label>
                 <i class="fa-solid fa-align-left"></i>
-                <textarea id="description" placeholder="Describe your issue" required></textarea>
+                <textarea id="description" placeholder="Describe your issue" required
+                    formControlName="description"></textarea>
             </div>
 
             <!-- File Upload -->
