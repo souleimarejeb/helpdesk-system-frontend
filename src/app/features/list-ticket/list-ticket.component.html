@@ -27,12 +27,13 @@
         <tr class="ticket-row" *ngFor="let ticket of tickets">
           <td>
             <span class="status-badge" [ngClass]="{
-              'open': ticket.status === 'open',
-              'in-progress': ticket.status === 'in-progress',
-              'resolved': ticket.status === 'resolved',
-              'closed': ticket.status === 'closed'
-            }">
-              {{ ticket.status | titlecase }}
+  'pending': ticket.status === 'Pending',
+  'in-progress': ticket.status === 'InProgress',
+  'solved': ticket.status === 'Solved',
+  'rejected': ticket.status === 'Rejected',
+  'closed': ticket.status === 'Closed'
+}">
+              {{ ticket.status }}
             </span>
           </td>
           <td>{{ ticket.title }}</td>

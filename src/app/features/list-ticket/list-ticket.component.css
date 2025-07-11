@@ -1,14 +1,15 @@
 .tickets-container {
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   max-width: 1200px;
   width: 100%;
   background: white;
-  border-radius: 25px;
-  padding: 40px 15px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
+  margin: 20px auto;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .tickets-container::before {
@@ -17,30 +18,36 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 8px;
+  height: 6px;
   background: linear-gradient(90deg, #667eea, #764ba2, #ff7e5f);
 }
-
-
-
-/* .tickets-container {
-  padding: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
-} */
 
 .tickets-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 0 5px;
 }
 
 .tickets-header h1 {
-  color: #2c3e50;
+  color: #1a1a1a;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.tickets-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
 }
 
 .tickets-actions {
@@ -50,88 +57,104 @@
 
 .filter-btn,
 .refresh-btn {
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  background-color: white;
-  color: #34495e;
-  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  color: #4a5568;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .filter-btn:hover,
 .refresh-btn:hover {
-  background-color: #f8f9fa;
-  border-color: #667eea;
-  color: #667eea;
+  background: linear-gradient(135deg, #e6e9f0 0%, #d3d8e2 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .table-responsive {
   overflow-x: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .ticket-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background-color: white;
+  min-width: 800px;
 }
 
 .ticket-table th {
-  background-color: #f8f9fa;
-  color: #34495e;
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+  color: #4a5568;
   font-weight: 600;
   text-align: left;
-  padding: 1rem;
-  border-bottom: 2px solid #e0e0e0;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .ticket-table td {
-  padding: 1rem;
-  border-bottom: 1px solid #eee;
-  color: #2c3e50;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #2d3748;
   vertical-align: middle;
+  transition: background-color 0.2s ease;
 }
 
-.ticket-row:hover {
+.ticket-row:hover td {
   background-color: #f8fafc;
 }
 
 .status-badge {
   display: inline-block;
-  padding: 0.3rem 0.6rem;
-  border-radius: 12px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .status-badge.open {
-  background-color: #e3f2fd;
-  color: #1976d2;
+  background-color: #ebf8ff;
+  color: #3182ce;
 }
 
 .status-badge.in-progress {
-  background-color: #fff8e1;
-  color: #ff8f00;
+  background-color: #fffaf0;
+  color: #dd6b20;
 }
 
 .status-badge.resolved {
-  background-color: #e8f5e9;
-  color: #388e3c;
+  background-color: #f0fff4;
+  color: #38a169;
 }
 
-.comment-cell {
-  max-width: 200px;
+.status-badge.closed {
+  background-color: #f8f9fa;
+  color: #718096;
+}
+
+.description-cell {
+  max-width: 300px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #4a5568;
 }
 
 .actions-cell {
@@ -141,57 +164,75 @@
 .action-btn {
   background: none;
   border: none;
-  color: #7f8c8d;
+  color: #a0aec0;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 50%;
-  transition: all 0.2s ease;
-  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+  margin-right: 0.3rem;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
 }
 
 .action-btn:hover {
-  background-color: #f1f5f9;
-  color: #667eea;
+  background-color: #edf2f7;
+  transform: scale(1.1);
 }
 
 .view-btn:hover {
-  color: #1976d2;
+  color: #4299e1;
 }
 
 .edit-btn:hover {
-  color: #ff8f00;
+  color: #ed8936;
 }
 
-.transfer-btn:hover {
-  color: #764ba2;
+.no-tickets {
+  text-align: center;
+  padding: 3rem;
+  color: #a0aec0;
+  font-size: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin: 1rem;
 }
 
 .table-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1.5rem;
+  padding: 0 5px;
 }
 
 .pagination-controls {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .pagination-btn {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: 1px solid #ddd;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
   background-color: white;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
 .pagination-btn:hover:not(:disabled) {
   border-color: #667eea;
   color: #667eea;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .pagination-btn:disabled {
@@ -200,8 +241,9 @@
 }
 
 .page-info {
-  color: #7f8c8d;
+  color: #718096;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .items-per-page {
@@ -211,36 +253,183 @@
 }
 
 .items-per-page label {
-  color: #7f8c8d;
+  color: #718096;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .items-per-page select {
-  padding: 0.3rem 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
   background-color: white;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
+.items-per-page select:hover {
+  border-color: #cbd5e0;
+}
 
-  .ticket-table th,
-  .ticket-table td {
-    padding: 0.75rem;
-  }
+.items-per-page select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
 }
 
 @media (max-width: 768px) {
+  .tickets-container {
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
   .tickets-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tickets-actions {
+    width: 100%;
+    justify-content: flex-end;
   }
 
   .table-footer {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
     align-items: flex-start;
   }
+
+  .items-per-page {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Status Badges - Enhanced */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.status-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+/* Pending - Yellow/orange with watch icon */
+.status-badge.pending {
+  background-color: #fff8e6;
+  color: #d97706;
+  padding-left: 1.8rem;
+}
+
+.status-badge.pending::after {
+  background-color: #f59e0b;
+}
+
+.status-badge.pending::before {
+  content: '⏳';
+  position: absolute;
+  left: 0.5rem;
+}
+
+/* InProgress - Blue with spinner icon */
+.status-badge.in-progress {
+  background-color: #ebf5ff;
+  color: #1d4ed8;
+  padding-left: 1.8rem;
+}
+
+.status-badge.in-progress::after {
+  background-color: #3b82f6;
+}
+
+.status-badge.in-progress::before {
+  content: '🔄';
+  position: absolute;
+  left: 0.5rem;
+}
+
+/* Solved - Green with checkmark icon */
+.status-badge.solved {
+  background-color: #f0fdf4;
+  color: #047857;
+  padding-left: 1.8rem;
+}
+
+.status-badge.solved::after {
+  background-color: #10b981;
+}
+
+.status-badge.solved::before {
+  content: '✓';
+  position: absolute;
+  left: 0.5rem;
+  font-weight: bold;
+}
+
+/* Rejected - Red with cross icon */
+.status-badge.rejected {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  padding-left: 1.8rem;
+}
+
+.status-badge.rejected::after {
+  background-color: #ef4444;
+}
+
+.status-badge.rejected::before {
+  content: '✗';
+  position: absolute;
+  left: 0.5rem;
+  font-weight: bold;
+}
+
+/* Closed - Purple with lock icon */
+.status-badge.closed {
+  background-color: #f5f3ff;
+  color: #6d28d9;
+  padding-left: 1.8rem;
+}
+
+.status-badge.closed::after {
+  background-color: #8b5cf6;
+}
+
+.status-badge.closed::before {
+  content: '🔒';
+  position: absolute;
+  left: 0.5rem;
+}
+
+/* Animation for in-progress status */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.status-badge.in-progress::before {
+  animation: spin 1.5s linear infinite;
 }
