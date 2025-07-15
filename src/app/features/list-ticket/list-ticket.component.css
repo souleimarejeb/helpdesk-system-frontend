@@ -433,3 +433,40 @@
 .status-badge.in-progress::before {
   animation: spin 1.5s linear infinite;
 }
+
+/* Make badge clickable */
+.status-badge.clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.status-badge.clickable:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge.clickable:active {
+  transform: translateY(0);
+}
+
+/* Loading state (optional) */
+.status-badge.updating {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.status-badge.updated::after {
+  content: ' ✓';
+  color: #38a169;
+  margin-left: 4px;
+  animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}

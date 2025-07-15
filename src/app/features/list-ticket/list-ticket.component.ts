@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketService } from '../../core/services/ticket.service';
-import { TicketRequest } from '../../core/models/TicketRequest';
 import { CommonModule } from '@angular/common';
 import { TicketResponse } from '../../core/models/TicketResponse';
 
@@ -14,6 +13,7 @@ export class ListTicketComponent implements OnInit {
 
 
   tickets: TicketResponse[] = [];
+  userId = '2';
 
   constructor(private ticketService: TicketService) { }
 
@@ -32,6 +32,25 @@ export class ListTicketComponent implements OnInit {
     });
   }
 
+  toggleStatus(ticket: TicketResponse): void {
+
+    const originalStatus = ticket.status;
+    if (originalStatus === 'Solved') {
+
+      ticket.status = ticket.status === 'Closed' ? 'Pending' : 'Closed';
+      this.ticketService.updateTicketStatus(ticket.ticketId, { status: ticket.status }, this.userId).subscribe({
+        next: () => {
+          console.log("Status updated successfully.");
+
+        },
+        error: (err) => {
+          ticket.status = originalStatus;
+          console.error('Failed to update ticket status', err);
+          alert('Failed to update status. Please try again.');
+        }
+      });
+    }
+  }
 
 
 }
