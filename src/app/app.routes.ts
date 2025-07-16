@@ -9,6 +9,7 @@ import { ContactComponent } from './features/contact/contact.component';
 import { ListAppointmentComponent } from './features/list-appointment/list-appointment.component';
 import { CalendarComponent } from './shared/calendar/calendar.component';
 import { HomeComponent } from './layout/home/home.component';
+import { ResponseComponent } from './features/response/response.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -23,7 +24,9 @@ export const routes: Routes = [
             { path: 'contact', component: ContactComponent },
             { path: 'calendar', component: CalendarComponent },
             { path: 'list-appointment', component: ListAppointmentComponent },
-            { path: 'home', component: HomeComponent }
+            { path: 'home', component: HomeComponent },
+            { path: 'reponse', component: ResponseComponent }
+
         ]
 
     }
